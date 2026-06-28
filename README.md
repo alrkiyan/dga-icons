@@ -4,7 +4,8 @@
   <br />
 
   [![npm version](https://img.shields.io/npm/v/@dga-icons/react.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/react)
-  [![License](https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square)](LICENSE)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+  [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
   [![Figma](https://img.shields.io/badge/Figma-Community-pink.svg?style=flat-square&logo=figma)](https://www.figma.com/community/file/1392269191144731080)
   [![Updated](https://img.shields.io/badge/Updated-28%2F3%2F2026-green.svg?style=flat-square)](#)
 
@@ -98,5 +99,7 @@ This library was made possible by the incredible design work of the **Digital Go
 
 ## 📄 License
 
-The source code and build tools are licensed under the **ISC License**.  
-The original icon designs are licensed under **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)**.
+This repository uses dual-licensing based on the type of resource:
+
+* **Source Code (`MIT`)**: All scripts, React components, and build tools are licensed under the **[MIT License](LICENSE)** to ensure legal protection and easy integration by other developers.
+* **Assets & Documentation (`CC BY 4.0`)**: All documentation, original SVGs, images, visual assets, and textual content are licensed under **[Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)**.

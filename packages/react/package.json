@@ -2,7 +2,7 @@
   "name": "@dga-icons/react",
   "version": "0.1.0",
   "description": "React components for DGA Icons — 4,354 beautifully crafted icons in 9 styles",
-  "license": "ISC",
+  "license": "MIT",
   "author": "Saleh @ Ruman",
   "type": "module",
   "main": "./dist/cjs/index.js",
