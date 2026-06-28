@@ -4,8 +4,8 @@
     --bg-hover: #27272a;
     --text-primary: #fafafa;
     --text-secondary: #a1a1aa;
-    --accent: #3b82f6;
-    --accent-hover: #2563eb;
+    --accent: #e11d48;
+    --accent-hover: #be123c;
     --border: #27272a;
     --radius: 12px;
     --font: 'Inter', -apple-system, sans-serif;
@@ -134,7 +134,7 @@ body {
 
 #search:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.2);
 }
 
 .style-selector-wrapper {
@@ -247,7 +247,7 @@ body {
     font-weight: 500;
     transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 10px 25px rgba(225, 29, 72, 0.4);
 }
 .toast.show { bottom: 2rem; }
 
@@ -356,6 +356,34 @@ body {
 }
 
 .copy-btn:hover { background: var(--border); }
+
+/* Footer Credits */
+.docs-footer {
+    margin-top: 5rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.credits p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.made-by {
+    font-size: 1.1rem !important;
+    color: var(--text-primary) !important;
+    line-height: 1.6;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
