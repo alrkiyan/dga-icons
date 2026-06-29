@@ -30,6 +30,11 @@ packages/preact/src/icons/
 packages/preact/src/index.ts
 packages/preact/src/*/icons/
 packages/preact/src/*/index.ts
+packages/react-native/src/icons/
+packages/react-native/src/index.ts
+packages/react-native/src/*/icons/
+packages/react-native/src/*/index.ts
+packages/svg/icons/
 
 # Backups from fix script
 icons/backups/

@@ -1,0 +1,95 @@
+{
+  "name": "@dga-icons/react-native",
+  "version": "0.1.0",
+  "description": "React Native components for DGA Icons — 4,354 beautifully crafted icons in 9 styles",
+  "license": "MIT",
+  "author": "Saleh @ Ruman",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
+    "./solid-rounded": {
+      "import": {
+        "types": "./dist/esm/solid-rounded/index.d.ts",
+        "default": "./dist/esm/solid-rounded/index.js"
+      }
+    },
+    "./bulk-rounded": {
+      "import": {
+        "types": "./dist/esm/bulk-rounded/index.d.ts",
+        "default": "./dist/esm/bulk-rounded/index.js"
+      }
+    },
+    "./duotone-rounded": {
+      "import": {
+        "types": "./dist/esm/duotone-rounded/index.d.ts",
+        "default": "./dist/esm/duotone-rounded/index.js"
+      }
+    },
+    "./twotone-rounded": {
+      "import": {
+        "types": "./dist/esm/twotone-rounded/index.d.ts",
+        "default": "./dist/esm/twotone-rounded/index.js"
+      }
+    },
+    "./solid-sharp": {
+      "import": {
+        "types": "./dist/esm/solid-sharp/index.d.ts",
+        "default": "./dist/esm/solid-sharp/index.js"
+      }
+    },
+    "./solid-standard": {
+      "import": {
+        "types": "./dist/esm/solid-standard/index.d.ts",
+        "default": "./dist/esm/solid-standard/index.js"
+      }
+    },
+    "./stroke-sharp": {
+      "import": {
+        "types": "./dist/esm/stroke-sharp/index.d.ts",
+        "default": "./dist/esm/stroke-sharp/index.js"
+      }
+    },
+    "./stroke-standard": {
+      "import": {
+        "types": "./dist/esm/stroke-standard/index.d.ts",
+        "default": "./dist/esm/stroke-standard/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf dist src/icons src/*-rounded src/*-sharp src/*-standard src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-svg": ">=13.0.0"
+  },
+  "dependencies": {
+    "@dga-icons/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "react": "^18.2.0",
+    "react-native-svg": "^15.1.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.2"
+  }
+}

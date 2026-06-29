@@ -1,0 +1,16 @@
+{
+  "name": "@dga-icons/svg",
+  "version": "0.1.0",
+  "description": "Raw SVG files for DGA Icons — 4,354 beautifully crafted icons in 9 styles",
+  "license": "MIT",
+  "author": "Saleh @ Ruman",
+  "exports": {
+    "./*": "./icons/*"
+  },
+  "files": [
+    "icons"
+  ],
+  "scripts": {
+    "clean": "rm -rf icons"
+  }
+}

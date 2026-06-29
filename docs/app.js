@@ -27,6 +27,7 @@ const elements = {
     codeSvelte: document.getElementById('code-svelte'),
     codeSolid: document.getElementById('code-solid'),
     codePreact: document.getElementById('code-preact'),
+    codeReactNative: document.getElementById('code-react-native'),
     codeSvg: document.getElementById('code-svg'),
     toast: document.getElementById('toast'),
     copyBtns: document.querySelectorAll('.copy-btn')
@@ -157,6 +158,10 @@ function openModal(icon) {
     // Generate Preact import code
     const preactImportPath = isDefaultStyle ? '@dga-icons/preact' : `@dga-icons/preact/${state.currentStyle}`;
     elements.codePreact.textContent = `import { ${icon.name} } from '${preactImportPath}';\n\n<${icon.name} size={24} />`;
+
+    // Generate React Native import code
+    const rnImportPath = isDefaultStyle ? '@dga-icons/react-native' : `@dga-icons/react-native/${state.currentStyle}`;
+    elements.codeReactNative.textContent = `import { ${icon.name} } from '${rnImportPath}';\n\n<${icon.name} size={24} />`;
     
     // Show Raw SVG
     elements.codeSvg.textContent = icon.svg;
