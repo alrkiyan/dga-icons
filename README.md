@@ -47,46 +47,73 @@
 Install the library using your favorite package manager:
 
 ```bash
+# React
 npm install @dga-icons/react
-# or
-yarn add @dga-icons/react
-# or
-pnpm add @dga-icons/react
+
+# Vue
+npm install @dga-icons/vue
+
+# Vanilla JS
+npm install @dga-icons/js
 ```
 
 ## 💻 Usage
 
-### Basic Usage
+### Usage with React
 
 By default, importing from `@dga-icons/react` gives you the `stroke-rounded` style.
 
 ```tsx
 import { Home01, ShoppingCart01 } from '@dga-icons/react';
+import { Camera } from '@dga-icons/react/solid-rounded'; // using a different style
 
 function App() {
   return (
     <div style={{ display: 'flex', gap: '16px' }}>
       <Home01 />
-      {/* Customize size, color, and stroke width */}
       <ShoppingCart01 size={32} color="blue" strokeWidth={2} />
+      <Camera />
     </div>
   );
 }
 ```
 
-### Using Different Styles
+### Usage with Vue
 
-You can easily use any of the other 8 styles by appending the style name to the import path. Every style has the exact same 4,354 icons!
+By default, importing from `@dga-icons/vue` gives you the `stroke-rounded` style.
 
-```tsx
-// Solid Rounded
-import { Camera } from '@dga-icons/react/solid-rounded';
+```vue
+<script setup>
+import { Home01, ShoppingCart01 } from '@dga-icons/vue';
+import { Camera } from '@dga-icons/vue/solid-rounded'; // using a different style
+</script>
 
-// Duotone
-import { User } from '@dga-icons/react/duotone-rounded';
+<template>
+  <div style="display: flex; gap: 16px;">
+    <Home01 />
+    <ShoppingCart01 :size="32" color="blue" :strokeWidth="2" />
+    <Camera />
+  </div>
+</template>
+```
 
-// Bulk
-import { Settings } from '@dga-icons/react/bulk-rounded';
+### Usage with Vanilla JS
+
+The Vanilla JS package exposes factory functions that return ready-to-mount `SVGElement` nodes.
+
+```javascript
+import { Home01, ShoppingCart01 } from '@dga-icons/js';
+import { Camera } from '@dga-icons/js/solid-rounded';
+
+// 1. Generate elements
+const homeIcon = Home01();
+const cartIcon = ShoppingCart01({ size: 32, color: 'blue', strokeWidth: 2 });
+const cameraIcon = Camera();
+
+// 2. Append to DOM
+document.body.appendChild(homeIcon);
+document.body.appendChild(cartIcon);
+document.body.appendChild(cameraIcon);
 ```
 
 ---
