@@ -4,7 +4,13 @@ import { toPascalCase, ALL_STYLES, DEFAULT_STYLE } from './utils.mjs';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const ICONS_DIR = join(ROOT, 'icons');
-const ANGULAR_SRC = join(ROOT, 'packages', 'angular', 'src');
+const ANGULAR_ROOT = join(ROOT, 'packages', 'angular');
+const ANGULAR_SRC = join(ANGULAR_ROOT, 'src');
+
+// ng-packagr only discovers secondary entry points in directories at the package
+// root, so each non-default style lives in packages/angular/<style>/ rather than
+// under src/.
+const PACKAGE_NAME = '@dga-icons/angular';
 
 async function main() {
   console.log('🔺  Generating @dga-icons/angular source files...\n');
@@ -38,7 +44,7 @@ async function generateForStyle(style, isDefault) {
 
   const outDir = isDefault
     ? join(ANGULAR_SRC, 'icons')
-    : join(ANGULAR_SRC, style, 'icons');
+    : join(ANGULAR_ROOT, style, 'icons');
 
   await mkdir(outDir, { recursive: true });
 
@@ -46,7 +52,8 @@ async function generateForStyle(style, isDefault) {
 
   for (const file of files) {
     const iconName = file.replace('.svg', '');
-    const componentName = toPascalCase(iconName) + 'Icon';
+    const coreName = toPascalCase(iconName);
+    const componentName = coreName + 'Icon';
 
     const coreImportPath = isDefault
       ? `@dga-icons/core`
@@ -54,6 +61,7 @@ async function generateForStyle(style, isDefault) {
 
     const source = generateComponentSource(
       componentName,
+      coreName,
       iconName,
       coreImportPath,
       isDefault
@@ -63,32 +71,35 @@ async function generateForStyle(style, isDefault) {
     iconNames.push({ iconName, componentName });
   }
 
-  const indexDir = isDefault ? ANGULAR_SRC : join(ANGULAR_SRC, style);
+  const indexDir = isDefault ? ANGULAR_SRC : join(ANGULAR_ROOT, style);
   const indexContent = generateBarrelIndex(iconNames, isDefault);
   
   // For Angular APF, primary entry is public-api.ts
   const indexFileName = 'public-api.ts';
   await writeFile(join(indexDir, indexFileName), indexContent);
 
-  // If it's a secondary entry point, create package.json for ng-packagr
+  // ng-packagr discovers secondary entry points by globbing for ng-package.json
   if (!isDefault) {
     await writeFile(
-      join(indexDir, 'package.json'),
-      JSON.stringify({ ngPackage: { lib: { entryFile: 'public-api.ts' } } }, null, 2)
+      join(indexDir, 'ng-package.json'),
+      JSON.stringify({ lib: { entryFile: 'public-api.ts' } }, null, 2) + '\n'
     );
   }
 }
 
 function generateComponentSource(
   componentName,
+  coreName,
   iconName,
   coreImportPath,
   isDefault
 ) {
-  const baseIconPath = isDefault ? '../base-icon' : '../../base-icon';
+  // Secondary entry points reach the shared directive through the primary entry
+  // point's package name; a relative path would duplicate it in every bundle.
+  const baseIconPath = isDefault ? '../base-icon' : PACKAGE_NAME;
 
   return `import { Component, ElementRef, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
-import { ${componentName.replace('Icon', '')} as iconData } from '${coreImportPath}';
+import { ${coreName} as iconData } from '${coreImportPath}';
 import { DgaBaseIcon } from '${baseIconPath}';
 
 @Component({

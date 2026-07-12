@@ -4,17 +4,22 @@
   "description": "Angular components for DGA Icons — 4,354 beautifully crafted icons in 9 styles",
   "license": "MIT",
   "author": "Saleh @ Ruman",
+  "publishConfig": {
+    "directory": "dist"
+  },
   "scripts": {
-    "build": "ng-packagr -p ng-package.json",
-    "clean": "rm -rf dist src/icons src/*-rounded src/*-sharp src/*-standard src/public-api.ts src/*/public-api.ts src/*/package.json"
+    "build": "ng-packagr -p ng-package.json -c tsconfig.lib.json",
+    "clean": "rm -rf dist src/icons src/public-api.ts *-rounded *-sharp *-standard"
   },
   "peerDependencies": {
+    "@angular/common": ">=16.0.0",
     "@angular/core": ">=16.0.0"
   },
   "dependencies": {
     "@dga-icons/core": "workspace:*"
   },
   "devDependencies": {
+    "@angular/common": "~17.3.0",
     "@angular/compiler": "~17.3.0",
     "@angular/compiler-cli": "~17.3.0",
     "@angular/core": "~17.3.0",

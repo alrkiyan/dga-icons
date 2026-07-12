@@ -1,4 +1,5 @@
-import { Directive, Input, OnChanges, ElementRef, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
+import type { OnChanges } from '@angular/core';
+import { Directive, Input, ElementRef, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Directive()
@@ -31,14 +32,14 @@ export abstract class DgaBaseIcon implements OnChanges {
     const children = this.iconData.map(([tag, attrs]: [string, Record<string, string>]) => {
       const attrStr = Object.entries(attrs).map(([k, v]) => {
         const kebab = k.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
-        return \`\${kebab}="\${v}"\`;
+        return `${kebab}="${v}"`;
       }).join(' ');
-      return \`<\${tag} \${attrStr}/>\`;
+      return `<${tag} ${attrStr}/>`;
     }).join('');
 
-    const cls = ['dga-icon', \`dga-icon-\${this.iconName}\`, this.class].filter(Boolean).join(' ');
+    const cls = ['dga-icon', `dga-icon-${this.iconName}`, this.class].filter(Boolean).join(' ');
 
-    const svgString = \`<svg xmlns="http://www.w3.org/2000/svg" width="\${this.size}" height="\${this.size}" viewBox="0 0 24 24" fill="none" stroke="\${this.color}" stroke-width="\${sw}" stroke-linecap="round" stroke-linejoin="round" class="\${cls}">\${children}</svg>\`;
+    const svgString = `<svg xmlns="http://www.w3.org/2000/svg" width="${this.size}" height="${this.size}" viewBox="0 0 24 24" fill="none" stroke="${this.color}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" class="${cls}">${children}</svg>`;
 
     this.renderer.setProperty(this.el.nativeElement, 'innerHTML', svgString);
   }
