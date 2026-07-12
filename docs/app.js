@@ -29,7 +29,6 @@ const elements = {
     codePreact: document.getElementById('code-preact'),
     codeReactNative: document.getElementById('code-react-native'),
     codeSvg: document.getElementById('code-svg'),
-    codeAngular: document.getElementById('code-angular'),
     codeAstro: document.getElementById('code-astro'),
     toast: document.getElementById('toast'),
     copyBtns: document.querySelectorAll('.copy-btn')
@@ -164,11 +163,6 @@ function openModal(icon) {
     // Generate React Native import code
     const rnImportPath = isDefaultStyle ? '@dga-icons/react-native' : `@dga-icons/react-native/${state.currentStyle}`;
     elements.codeReactNative.textContent = `import { ${icon.name} } from '${rnImportPath}';\n\n<${icon.name} size={24} />`;
-    
-    // Generate Angular import code
-    const angularImportPath = isDefaultStyle ? '@dga-icons/angular' : `@dga-icons/angular/${state.currentStyle}`;
-    const kebabName = icon.name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
-    elements.codeAngular.textContent = `import { ${icon.name}Icon } from '${angularImportPath}';\n\n@Component({\n  standalone: true,\n  imports: [${icon.name}Icon],\n  template: \`<dga-\${kebabName} size="24"></dga-\${kebabName}>\`\n})\nexport class MyComponent {}`;
 
     // Generate Astro import code
     const astroImportPath = isDefaultStyle ? '@dga-icons/astro' : `@dga-icons/astro/${state.currentStyle}`;

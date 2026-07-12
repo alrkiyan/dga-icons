@@ -26,7 +26,6 @@
 | <img src="assets/packages_logos/svelte.svg" width="24" height="24" valign="middle" /> **Svelte** | [![npm](https://img.shields.io/npm/v/@dga-icons/svelte.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/svelte) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/svelte) |
 | <img src="assets/packages_logos/solid.svg" width="24" height="24" valign="middle" /> **Solid** | [![npm](https://img.shields.io/npm/v/@dga-icons/solid.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/solid) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/solid) |
 | <img src="assets/packages_logos/preact.svg" width="24" height="24" valign="middle" /> **Preact** | [![npm](https://img.shields.io/npm/v/@dga-icons/preact.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/preact) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/preact) |
-| <img src="assets/packages_logos/angular.svg" width="24" height="24" valign="middle" /> **Angular** | [![npm](https://img.shields.io/npm/v/@dga-icons/angular.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/angular) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/angular) |
 | <img src="assets/packages_logos/react-native.svg" width="24" height="24" valign="middle" /> **React Native** | [![npm](https://img.shields.io/npm/v/@dga-icons/react-native.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/react-native) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/react-native) |
 | <img src="assets/packages_logos/astro.svg" width="24" height="24" valign="middle" /> **Astro** | [![npm](https://img.shields.io/npm/v/@dga-icons/astro.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/astro) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/astro) |
 | <img src="assets/packages_logos/js.svg" width="24" height="24" valign="middle" /> **Vanilla JS** | [![npm](https://img.shields.io/npm/v/@dga-icons/js.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/js) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/js) |
@@ -64,6 +63,9 @@ npm install @dga-icons/preact
 
 # React Native
 npm install @dga-icons/react-native react-native-svg
+
+# Astro
+npm install @dga-icons/astro
 
 # Vanilla JS
 npm install @dga-icons/js
@@ -180,6 +182,21 @@ export default function App() {
 }
 ```
 
+### Astro
+
+```astro
+---
+import { Home01, ShoppingCart01 } from '@dga-icons/astro';
+import { Camera } from '@dga-icons/astro/solid-rounded';
+---
+
+<div style="display: flex; gap: 16px;">
+  <Home01 />
+  <ShoppingCart01 size={32} color="blue" strokeWidth={2} />
+  <Camera />
+</div>
+```
+
 ### Vanilla JS
 
 The Vanilla JS package exposes factory functions that return ready-to-mount `SVGElement` nodes.
@@ -215,25 +232,28 @@ img.src = homeIconPath;
 
 ## 🤝 Credits & Acknowledgements
 
-This library was made possible by the incredible design work of the **Digital Government Authority (DGA)** and the development efforts of **Ruman Agency**.
+This library was made possible by the incredible design work of the **Digital Government Authority (DGA)**. The library itself — the packages, build tooling, and documentation — is developed and maintained by **Saleh Alrkiyan**.
 
 <div align="center">
   <a href="https://dga.gov.sa">
     <img src="assets/DGA_logo.png" alt="DGA Logo" height="80" style="margin: 0 20px;" />
   </a>
-  <a href="https://ruman.sa">
-    <img src="assets/Ruman_logo.svg" alt="Ruman Agency Logo" height="80" style="margin: 0 20px;" />
+  <a href="https://isaleh.dev">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/saleh-logo-inverse.svg" />
+      <img src="assets/saleh-logo-ink.svg" alt="Saleh Alrkiyan Logo" height="60" style="margin: 0 20px;" />
+    </picture>
   </a>
 </div>
 
 <br/>
 
 * **DGA هيئة الحكومة الرقمية**: [https://dga.gov.sa](https://dga.gov.sa)
-* **Ruman Agency وكالة رمان**: [https://ruman.sa](https://ruman.sa)
+* **Saleh Alrkiyan صالح الركيان**: [https://isaleh.dev](https://isaleh.dev)
 * **Original Figma File الملف الأصلي للأيقونات**: [Figma Community](https://www.figma.com/community/file/1392269191144731080)
 
 <div align="center">
-  <h3>صنع بـ ❤️ صالح <br/> Made by Saleh</h3>
+  <h3>صنع بـ ❤️ صالح الركيان <br/> Made by Saleh Alrkiyan</h3>
   <p><i>Updated: 28/3/2026</i></p>
 </div>
 

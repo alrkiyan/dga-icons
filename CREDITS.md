@@ -12,4 +12,4 @@ licensed under the [ISC License](./LICENSE).
 
 ---
 
-**DGA Icons** is developed and maintained by **Saleh @ Ruman**.
+**DGA Icons** is developed and maintained by **[Saleh Alrkiyan](https://isaleh.dev)**.

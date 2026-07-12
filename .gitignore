@@ -35,12 +35,6 @@ packages/react-native/src/index.ts
 packages/react-native/src/*/icons/
 packages/react-native/src/*/index.ts
 packages/svg/icons/
-packages/angular/src/icons/
-packages/angular/src/public-api.ts
-# Secondary entry points (one dir per style, at the package root)
-packages/angular/*-rounded/
-packages/angular/*-sharp/
-packages/angular/*-standard/
 packages/astro/src/icons/
 packages/astro/src/index.ts
 packages/astro/src/*/icons/

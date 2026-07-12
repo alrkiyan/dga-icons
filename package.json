@@ -4,11 +4,10 @@
   "version": "0.0.0",
   "description": "A comprehensive icon library with 4,354 icons in 9 styles",
   "scripts": {
-    "generate": "node scripts/generate-core.mjs && node scripts/generate-react.mjs && node scripts/generate-vue.mjs && node scripts/generate-js.mjs && node scripts/generate-svelte.mjs && node scripts/generate-solid.mjs && node scripts/generate-preact.mjs && node scripts/generate-react-native.mjs && node scripts/generate-svg.mjs && node scripts/generate-astro.mjs && node scripts/generate-angular.mjs",
+    "generate": "node scripts/generate-core.mjs && node scripts/generate-react.mjs && node scripts/generate-vue.mjs && node scripts/generate-js.mjs && node scripts/generate-svelte.mjs && node scripts/generate-solid.mjs && node scripts/generate-preact.mjs && node scripts/generate-react-native.mjs && node scripts/generate-svg.mjs && node scripts/generate-astro.mjs",
     "generate:core": "node scripts/generate-core.mjs",
     "generate:react": "node scripts/generate-react.mjs",
     "generate:astro": "node scripts/generate-astro.mjs",
-    "generate:angular": "node scripts/generate-angular.mjs",
     "build": "NODE_OPTIONS=--max_old_space_size=8192 pnpm -r build",
     "build:core": "pnpm --filter @dga-icons/core build",
     "build:react": "pnpm --filter @dga-icons/react build",
@@ -22,7 +21,7 @@
     "components",
     "ui"
   ],
-  "author": "Saleh @ Ruman",
+  "author": "Saleh Alrkiyan (https://isaleh.dev)",
   "license": "MIT",
   "engines": {
     "node": ">=18",

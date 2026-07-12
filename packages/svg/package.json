@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Raw SVG files for DGA Icons — 4,354 beautifully crafted icons in 9 styles",
   "license": "MIT",
-  "author": "Saleh @ Ruman",
+  "author": "Saleh Alrkiyan (https://isaleh.dev)",
   "exports": {
     "./*": "./icons/*"
   },
