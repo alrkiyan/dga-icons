@@ -3,7 +3,7 @@
 
   <br />
 
-  [![Website](https://img.shields.io/badge/Website-Explore_Icons-success.svg?style=flat-square)](https://rumanagency.github.io/dga-icons/)
+  [![Website](https://img.shields.io/badge/Website-Explore_Icons-success.svg?style=flat-square)](https://alrkiyan.github.io/dga-icons/)
   [![npm version](https://img.shields.io/npm/v/@dga-icons/react.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/react)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
   [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
@@ -12,7 +12,7 @@
 
   **A comprehensive, fully tree-shakable React icon library with 4,354 beautifully crafted icons across 9 distinct styles.**
 
-  ### 🌐 [Explore & Search All Icons Here](https://rumanagency.github.io/dga-icons/)
+  ### 🌐 [Explore & Search All Icons Here](https://alrkiyan.github.io/dga-icons/)
 </div>
 
 ---
@@ -21,16 +21,16 @@
 
 | Package | Version | Links |
 | :--- | :--- | :--- |
-| <img src="assets/packages_logos/react.svg" width="24" height="24" valign="middle" /> **React** | [![npm](https://img.shields.io/npm/v/@dga-icons/react.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/react) | [Source](https://github.com/rumanagency/dga-icons/tree/main/packages/react) |
-| <img src="assets/packages_logos/vue.svg" width="24" height="24" valign="middle" /> **Vue** | [![npm](https://img.shields.io/npm/v/@dga-icons/vue.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/vue) | [Source](https://github.com/rumanagency/dga-icons/tree/main/packages/vue) |
-| <img src="assets/packages_logos/svelte.svg" width="24" height="24" valign="middle" /> **Svelte** | [![npm](https://img.shields.io/npm/v/@dga-icons/svelte.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/svelte) | [Source](https://github.com/rumanagency/dga-icons/tree/main/packages/svelte) |
-| <img src="assets/packages_logos/solid.svg" width="24" height="24" valign="middle" /> **Solid** | [![npm](https://img.shields.io/npm/v/@dga-icons/solid.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/solid) | [Source](https://github.com/rumanagency/dga-icons/tree/main/packages/solid) |
-| <img src="assets/packages_logos/preact.svg" width="24" height="24" valign="middle" /> **Preact** | [![npm](https://img.shields.io/npm/v/@dga-icons/preact.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/preact) | [Source](https://github.com/rumanagency/dga-icons/tree/main/packages/preact) |
+| <img src="assets/packages_logos/react.svg" width="24" height="24" valign="middle" /> **React** | [![npm](https://img.shields.io/npm/v/@dga-icons/react.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/react) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/react) |
+| <img src="assets/packages_logos/vue.svg" width="24" height="24" valign="middle" /> **Vue** | [![npm](https://img.shields.io/npm/v/@dga-icons/vue.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/vue) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/vue) |
+| <img src="assets/packages_logos/svelte.svg" width="24" height="24" valign="middle" /> **Svelte** | [![npm](https://img.shields.io/npm/v/@dga-icons/svelte.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/svelte) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/svelte) |
+| <img src="assets/packages_logos/solid.svg" width="24" height="24" valign="middle" /> **Solid** | [![npm](https://img.shields.io/npm/v/@dga-icons/solid.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/solid) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/solid) |
+| <img src="assets/packages_logos/preact.svg" width="24" height="24" valign="middle" /> **Preact** | [![npm](https://img.shields.io/npm/v/@dga-icons/preact.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/preact) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/preact) |
 | <img src="assets/packages_logos/angular.svg" width="24" height="24" valign="middle" /> **Angular** | SOON | SOON |
-| <img src="assets/packages_logos/react-native.svg" width="24" height="24" valign="middle" /> **React Native** | [![npm](https://img.shields.io/npm/v/@dga-icons/react-native.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/react-native) | [Source](https://github.com/rumanagency/dga-icons/tree/main/packages/react-native) |
+| <img src="assets/packages_logos/react-native.svg" width="24" height="24" valign="middle" /> **React Native** | [![npm](https://img.shields.io/npm/v/@dga-icons/react-native.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/react-native) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/react-native) |
 | <img src="assets/packages_logos/astro.svg" width="24" height="24" valign="middle" /> **Astro** | SOON | SOON |
-| <img src="assets/packages_logos/js.svg" width="24" height="24" valign="middle" /> **Vanilla JS** | [![npm](https://img.shields.io/npm/v/@dga-icons/js.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/js) | [Source](https://github.com/rumanagency/dga-icons/tree/main/packages/js) |
-| <img src="assets/packages_logos/svg.svg" width="24" height="24" valign="middle" /> **Raw SVG** | [![npm](https://img.shields.io/npm/v/@dga-icons/svg.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/svg) | [Source](https://github.com/rumanagency/dga-icons/tree/main/packages/svg) |
+| <img src="assets/packages_logos/js.svg" width="24" height="24" valign="middle" /> **Vanilla JS** | [![npm](https://img.shields.io/npm/v/@dga-icons/js.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/js) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/js) |
+| <img src="assets/packages_logos/svg.svg" width="24" height="24" valign="middle" /> **Raw SVG** | [![npm](https://img.shields.io/npm/v/@dga-icons/svg.svg?style=flat-square)](https://www.npmjs.com/package/@dga-icons/svg) | [Source](https://github.com/alrkiyan/dga-icons/tree/main/packages/svg) |
 
 ---
 
