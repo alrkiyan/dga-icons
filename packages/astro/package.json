@@ -1,0 +1,51 @@
+{
+  "name": "@dga-icons/astro",
+  "version": "0.1.0",
+  "description": "Astro components for DGA Icons — 4,354 beautifully crafted icons in 9 styles",
+  "license": "MIT",
+  "author": "Saleh @ Ruman",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./solid-rounded": "./src/solid-rounded/index.ts",
+    "./bulk-rounded": "./src/bulk-rounded/index.ts",
+    "./duotone-rounded": "./src/duotone-rounded/index.ts",
+    "./twotone-rounded": "./src/twotone-rounded/index.ts",
+    "./solid-sharp": "./src/solid-sharp/index.ts",
+    "./solid-standard": "./src/solid-standard/index.ts",
+    "./stroke-sharp": "./src/stroke-sharp/index.ts",
+    "./stroke-standard": "./src/stroke-standard/index.ts",
+    "./icons/*": "./src/icons/*"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc --noEmit",
+    "clean": "rm -rf src/icons src/*-rounded src/*-sharp src/*-standard src/index.ts"
+  },
+  "peerDependencies": {
+    "astro": ">=3.0.0"
+  },
+  "dependencies": {
+    "@dga-icons/core": "workspace:*"
+  },
+  "devDependencies": {
+    "astro": "^4.0.0",
+    "typescript": "^5.4.0"
+  },
+  "keywords": [
+    "icons",
+    "astro",
+    "svg",
+    "components",
+    "ui",
+    "dga-icons",
+    "icon-library"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alrkiyan/dga-icons",
+    "directory": "packages/astro"
+  }
+}
