@@ -1,6 +1,6 @@
 {
   "name": "@dga-icons/svg",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Raw SVG files for DGA Icons — 4,354 beautifully crafted icons in 9 styles",
   "license": "MIT",
   "author": "Saleh Alrkiyan (https://isaleh.dev)",
@@ -8,9 +8,29 @@
     "./*": "./icons/*"
   },
   "files": [
-    "icons"
+    "icons",
+    "LICENSE"
   ],
   "scripts": {
     "clean": "rm -rf icons"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "raw-svg",
+    "dga-icons",
+    "icon-library"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alrkiyan/dga-icons.git",
+    "directory": "packages/svg"
+  },
+  "homepage": "https://github.com/alrkiyan/dga-icons#readme",
+  "bugs": {
+    "url": "https://github.com/alrkiyan/dga-icons/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@dga-icons/astro",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Astro components for DGA Icons — 4,354 beautifully crafted icons in 9 styles",
   "license": "MIT",
   "author": "Saleh Alrkiyan (https://isaleh.dev)",
@@ -18,7 +18,8 @@
     "./icons/*": "./src/icons/*"
   },
   "files": [
-    "src"
+    "src",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc --noEmit",
@@ -28,7 +29,7 @@
     "astro": ">=3.0.0"
   },
   "dependencies": {
-    "@dga-icons/core": "workspace:*"
+    "@dga-icons/core": "workspace:^"
   },
   "devDependencies": {
     "astro": "^4.0.0",
@@ -45,7 +46,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/alrkiyan/dga-icons",
+    "url": "git+https://github.com/alrkiyan/dga-icons.git",
     "directory": "packages/astro"
+  },
+  "homepage": "https://github.com/alrkiyan/dga-icons#readme",
+  "bugs": {
+    "url": "https://github.com/alrkiyan/dga-icons/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,55 +1,54 @@
 import { defineConfig } from 'tsup';
-import { readdirSync, statSync } from 'fs';
+import { existsSync, readdirSync, statSync } from 'fs';
 import { join } from 'path';
 
-const srcDir = join(__dirname, 'src');
+// Find all style subdirectories that have been generated
+const stylesWithContent = [];
+const srcDir = join(import.meta.dirname, 'src');
 
-// Get all directories in src that contain an index.ts
-function getEntryPoints() {
-  const entries = {
-    index: 'src/index.ts'
-  };
-  
-  try {
-    const files = readdirSync(srcDir);
-    for (const file of files) {
-      const fullPath = join(srcDir, file);
-      if (statSync(fullPath).isDirectory()) {
-        try {
-          if (statSync(join(fullPath, 'index.ts')).isFile()) {
-            entries[`${file}/index`] = `src/${file}/index.ts`;
-          }
-        } catch (e) {
-          // ignore
-        }
-      }
+try {
+  for (const entry of readdirSync(srcDir)) {
+    const entryPath = join(srcDir, entry);
+    if (
+      statSync(entryPath).isDirectory() &&
+      entry !== 'icons' &&
+      !entry.startsWith('.') &&
+      existsSync(join(entryPath, 'index.ts'))
+    ) {
+      stylesWithContent.push(entry);
     }
-  } catch (e) {
-    // ignore
   }
-  return entries;
+} catch {
+  // src dir might not exist yet
 }
 
-export default defineConfig({
-  entry: getEntryPoints(),
-  format: ['cjs', 'esm'],
-  dts: false,
-  clean: true,
-  sourcemap: false,
-  splitting: true,
-  treeshake: true,
-  external: ['@dga-icons/core'],
-  outDir: 'dist',
-  outExtension({ format }) {
-    return {
-      js: format === 'esm' ? '.js' : '.cjs',
-    };
+// Build entry points: main index + each style's index
+const entry = {
+  index: 'src/index.ts',
+};
+
+for (const style of stylesWithContent) {
+  entry[`${style}/index`] = `src/${style}/index.ts`;
+}
+
+const external = ['@dga-icons/core'];
+
+export default defineConfig([
+  {
+    entry,
+    format: ['esm'],
+    dts: true,
+    splitting: true,
+    treeshake: true,
+    outDir: 'dist/esm',
+    clean: true,
+    external,
   },
-  esbuildOptions(options, context) {
-    if (context.format === 'cjs') {
-      options.outdir = 'dist/cjs';
-    } else {
-      options.outdir = 'dist/esm';
-    }
-  }
-});
+  {
+    entry: { index: 'src/index.ts' },
+    format: ['cjs'],
+    dts: true,
+    outDir: 'dist/cjs',
+    external,
+  },
+]);

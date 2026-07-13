@@ -1,11 +1,11 @@
 {
   "name": "@dga-icons/react-native",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Native components for DGA Icons — 4,354 beautifully crafted icons in 9 styles",
   "license": "MIT",
   "author": "Saleh Alrkiyan (https://isaleh.dev)",
   "type": "module",
-  "main": "./dist/cjs/index.js",
+  "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "sideEffects": false,
@@ -70,7 +70,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsup",
@@ -83,7 +84,7 @@
     "react-native-svg": ">=13.0.0"
   },
   "dependencies": {
-    "@dga-icons/core": "workspace:*"
+    "@dga-icons/core": "workspace:^"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
@@ -91,5 +92,26 @@
     "react-native-svg": "^15.1.0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.2"
+  },
+  "keywords": [
+    "icons",
+    "react-native",
+    "svg",
+    "components",
+    "ui",
+    "dga-icons",
+    "icon-library"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alrkiyan/dga-icons.git",
+    "directory": "packages/react-native"
+  },
+  "homepage": "https://github.com/alrkiyan/dga-icons#readme",
+  "bugs": {
+    "url": "https://github.com/alrkiyan/dga-icons/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

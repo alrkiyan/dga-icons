@@ -12,7 +12,8 @@
     "build:core": "pnpm --filter @dga-icons/core build",
     "build:react": "pnpm --filter @dga-icons/react build",
     "clean": "pnpm -r clean",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "verify:packs": "node scripts/verify-packs.mjs"
   },
   "keywords": [
     "icons",

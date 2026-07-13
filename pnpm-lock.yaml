@@ -21,7 +21,7 @@ importers:
   packages/astro:
     dependencies:
       '@dga-icons/core':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core
     devDependencies:
       astro:
@@ -43,7 +43,7 @@ importers:
   packages/js:
     dependencies:
       '@dga-icons/core':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core
     devDependencies:
       tsup:
@@ -56,7 +56,7 @@ importers:
   packages/preact:
     dependencies:
       '@dga-icons/core':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core
     devDependencies:
       preact:
@@ -72,7 +72,7 @@ importers:
   packages/react:
     dependencies:
       '@dga-icons/core':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core
     devDependencies:
       '@types/react':
@@ -91,7 +91,7 @@ importers:
   packages/react-native:
     dependencies:
       '@dga-icons/core':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core
       react-native:
         specifier: '*'
@@ -116,7 +116,7 @@ importers:
   packages/solid:
     dependencies:
       '@dga-icons/core':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core
     devDependencies:
       solid-js:
@@ -132,7 +132,7 @@ importers:
   packages/svelte:
     dependencies:
       '@dga-icons/core':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core
     devDependencies:
       svelte:
@@ -150,7 +150,7 @@ importers:
   packages/vue:
     dependencies:
       '@dga-icons/core':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core
     devDependencies:
       tsup:

@@ -1,11 +1,11 @@
 {
   "name": "@dga-icons/core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Icon data for DGA Icons — 4,354 icons in 9 styles",
   "license": "MIT",
   "author": "Saleh Alrkiyan (https://isaleh.dev)",
   "type": "module",
-  "main": "./dist/cjs/index.js",
+  "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "sideEffects": false,
@@ -20,16 +20,6 @@
         "default": "./dist/cjs/index.cjs"
       }
     },
-    "./icons/*": {
-      "import": {
-        "types": "./dist/esm/icons/*.d.ts",
-        "default": "./dist/esm/icons/*.js"
-      },
-      "require": {
-        "types": "./dist/cjs/icons/*.d.cts",
-        "default": "./dist/cjs/icons/*.cjs"
-      }
-    },
     "./stroke-rounded": {
       "import": {
         "types": "./dist/esm/index.d.ts",
@@ -42,22 +32,10 @@
         "default": "./dist/esm/solid-rounded/index.js"
       }
     },
-    "./solid-rounded/icons/*": {
-      "import": {
-        "types": "./dist/esm/solid-rounded/icons/*.d.ts",
-        "default": "./dist/esm/solid-rounded/icons/*.js"
-      }
-    },
     "./bulk-rounded": {
       "import": {
         "types": "./dist/esm/bulk-rounded/index.d.ts",
         "default": "./dist/esm/bulk-rounded/index.js"
-      }
-    },
-    "./bulk-rounded/icons/*": {
-      "import": {
-        "types": "./dist/esm/bulk-rounded/icons/*.d.ts",
-        "default": "./dist/esm/bulk-rounded/icons/*.js"
       }
     },
     "./duotone-rounded": {
@@ -66,22 +44,10 @@
         "default": "./dist/esm/duotone-rounded/index.js"
       }
     },
-    "./duotone-rounded/icons/*": {
-      "import": {
-        "types": "./dist/esm/duotone-rounded/icons/*.d.ts",
-        "default": "./dist/esm/duotone-rounded/icons/*.js"
-      }
-    },
     "./twotone-rounded": {
       "import": {
         "types": "./dist/esm/twotone-rounded/index.d.ts",
         "default": "./dist/esm/twotone-rounded/index.js"
-      }
-    },
-    "./twotone-rounded/icons/*": {
-      "import": {
-        "types": "./dist/esm/twotone-rounded/icons/*.d.ts",
-        "default": "./dist/esm/twotone-rounded/icons/*.js"
       }
     },
     "./solid-sharp": {
@@ -90,22 +56,10 @@
         "default": "./dist/esm/solid-sharp/index.js"
       }
     },
-    "./solid-sharp/icons/*": {
-      "import": {
-        "types": "./dist/esm/solid-sharp/icons/*.d.ts",
-        "default": "./dist/esm/solid-sharp/icons/*.js"
-      }
-    },
     "./solid-standard": {
       "import": {
         "types": "./dist/esm/solid-standard/index.d.ts",
         "default": "./dist/esm/solid-standard/index.js"
-      }
-    },
-    "./solid-standard/icons/*": {
-      "import": {
-        "types": "./dist/esm/solid-standard/icons/*.d.ts",
-        "default": "./dist/esm/solid-standard/icons/*.js"
       }
     },
     "./stroke-sharp": {
@@ -114,22 +68,10 @@
         "default": "./dist/esm/stroke-sharp/index.js"
       }
     },
-    "./stroke-sharp/icons/*": {
-      "import": {
-        "types": "./dist/esm/stroke-sharp/icons/*.d.ts",
-        "default": "./dist/esm/stroke-sharp/icons/*.js"
-      }
-    },
     "./stroke-standard": {
       "import": {
         "types": "./dist/esm/stroke-standard/index.d.ts",
         "default": "./dist/esm/stroke-standard/index.js"
-      }
-    },
-    "./stroke-standard/icons/*": {
-      "import": {
-        "types": "./dist/esm/stroke-standard/icons/*.d.ts",
-        "default": "./dist/esm/stroke-standard/icons/*.js"
       }
     }
   },
@@ -150,11 +92,19 @@
     "icons",
     "svg",
     "icon-data",
-    "dga-icons"
+    "dga-icons",
+    "icon-library"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/alrkiyan/dga-icons",
+    "url": "git+https://github.com/alrkiyan/dga-icons.git",
     "directory": "packages/core"
+  },
+  "homepage": "https://github.com/alrkiyan/dga-icons#readme",
+  "bugs": {
+    "url": "https://github.com/alrkiyan/dga-icons/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

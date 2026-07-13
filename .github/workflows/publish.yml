@@ -33,7 +33,12 @@ jobs:
           pnpm generate
           pnpm build
         env:
-          NODE_OPTIONS: --max_old_space_size=6144
+          NODE_OPTIONS: --max_old_space_size=8192
+
+      # Guards the two failures that shipped in 0.1.0: an unresolved `workspace:`
+      # specifier, and exports pointing at files the tarball does not contain.
+      - name: Verify packages are installable
+        run: pnpm verify:packs
 
       - name: Publish to npm
         if: env.NPM_TOKEN != ''
