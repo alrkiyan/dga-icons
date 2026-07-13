@@ -4,11 +4,19 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
-    
+    timeout-minutes: 90
+
+    # Job-level so the publish step's `if:` can read it. A step cannot see env
+    # vars declared on itself — that mistake kept the publish step from ever
+    # running, and every release up to 0.1.1 had to go out by hand.
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -28,6 +36,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # `pnpm build` is deliberately serial (--workspace-concurrency=1): parallel
+      # dts workers each take multi-GB heaps and the runner gets OOM-killed.
       - name: Generate and Build
         run: |
           pnpm generate
@@ -40,9 +50,10 @@ jobs:
       - name: Verify packages are installable
         run: pnpm verify:packs
 
+      # Only versions not yet on the registry are published; pnpm skips the rest,
+      # so a push that does not bump a version is a no-op here.
       - name: Publish to npm
         if: env.NPM_TOKEN != ''
         run: pnpm -r publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

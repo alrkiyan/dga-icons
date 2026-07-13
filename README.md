@@ -8,9 +8,9 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
   [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
   [![Figma](https://img.shields.io/badge/Figma-Community-pink.svg?style=flat-square&logo=figma)](https://www.figma.com/community/file/1392269191144731080)
-  [![Updated](https://img.shields.io/badge/Updated-28%2F3%2F2026-green.svg?style=flat-square)](#)
+  [![Updated](https://img.shields.io/badge/Updated-14%2F7%2F2026-green.svg?style=flat-square)](#)
 
-  **A comprehensive, fully tree-shakable React icon library with 4,354 beautifully crafted icons across 9 distinct styles.**
+  **A comprehensive, fully tree-shakable icon library with 4,354 beautifully crafted icons across 9 distinct styles — for React, Vue, Svelte, Solid, Preact, React Native, Astro, and vanilla JS.**
 
   ### 🌐 [Explore & Search All Icons Here](https://alrkiyan.github.io/dga-icons/)
 </div>
@@ -42,6 +42,9 @@
 - **TypeScript First**: Full type safety and autocompletion for a flawless developer experience.
 
 ## 📦 Installation
+
+> **Install 0.1.1 or newer.** 0.1.0 cannot be installed at all — its manifest kept
+> an internal `workspace:*` dependency, so npm rejects it with `EUNSUPPORTEDPROTOCOL`.
 
 Install the library using your favorite package manager:
 
@@ -230,6 +233,34 @@ img.src = homeIconPath;
 
 ---
 
+## 🛠️ Development
+
+```bash
+pnpm install
+pnpm generate       # regenerate every package's sources from icons/
+pnpm build          # build all packages (serial — see below)
+pnpm verify:packs   # assert every package is installable before releasing
+```
+
+`pnpm build` runs one package at a time on purpose. Type generation spans 4,354
+icons across 9 styles per package, and parallel workers each take a multi-GB heap
+— enough to get a 16 GB CI runner OOM-killed. Expect roughly 40 minutes for a
+full build.
+
+### Releasing
+
+Bump the version in every `packages/*/package.json`, then push to `main`. The
+workflow builds, runs `verify:packs`, and publishes whatever version is not on
+the registry yet. It needs an `NPM_TOKEN` repository secret.
+
+**Publish with `pnpm publish`, never `npm publish`.** Packages depend on
+`@dga-icons/core` via `workspace:^`, and only pnpm rewrites that to a real version
+range at pack time. `npm publish` ships the literal `workspace:^` and the package
+becomes impossible to install — that is exactly what happened to 0.1.0.
+`verify:packs` exists to catch this, and CI will not publish if it fails.
+
+---
+
 ## 🤝 Credits & Acknowledgements
 
 This library was made possible by the incredible design work of the **Digital Government Authority (DGA)**. The library itself — the packages, build tooling, and documentation — is developed and maintained by **Saleh Alrkiyan**.
@@ -254,7 +285,7 @@ This library was made possible by the incredible design work of the **Digital Go
 
 <div align="center">
   <h3>صنع بـ ❤️ صالح الركيان <br/> Made by Saleh Alrkiyan</h3>
-  <p><i>Updated: 28/3/2026</i></p>
+  <p><i>Updated: 14/7/2026</i></p>
 </div>
 
 ---

@@ -16,8 +16,10 @@ import { join, resolve } from 'path';
 const ROOT = resolve(import.meta.dirname, '..');
 const BAD_PROTOCOLS = ['workspace:', 'link:', 'file:'];
 
+// svg and astro carry ~40k files each, so a `tar -tzf` listing blows past the
+// 1 MB default stdio buffer.
 const sh = (cmd, args, opts = {}) =>
-  execFileSync(cmd, args, { encoding: 'utf8', ...opts });
+  execFileSync(cmd, args, { encoding: 'utf8', maxBuffer: 512 * 1024 * 1024, ...opts });
 
 function collectTargets(exports, out = []) {
   if (typeof exports === 'string') {
