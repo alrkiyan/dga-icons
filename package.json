@@ -8,7 +8,7 @@
     "generate:core": "node scripts/generate-core.mjs",
     "generate:react": "node scripts/generate-react.mjs",
     "generate:astro": "node scripts/generate-astro.mjs",
-    "build": "NODE_OPTIONS=--max_old_space_size=8192 pnpm -r build",
+    "build": "NODE_OPTIONS=--max_old_space_size=8192 pnpm -r --workspace-concurrency=1 build",
     "build:core": "pnpm --filter @dga-icons/core build",
     "build:react": "pnpm --filter @dga-icons/react build",
     "clean": "pnpm -r clean",
